@@ -1,6 +1,6 @@
 # CTF-Tools
 # 任务列表
-+ [x] wrapper
++ [X] wrapper
 
   给pwn加层壳，流量劫持
   + [ ] prctl 限制子进程系统调用
