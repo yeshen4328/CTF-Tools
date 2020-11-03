@@ -79,6 +79,6 @@ int main(void)
         memset(out_buf, 0, 1000);
     }
 
-    wait(NULL);  
+    //wait(NULL);  
     return 0;
 }
