@@ -57,8 +57,13 @@ int main(void)
     // memset(out_buf, 0, 1000);
     int ret = 0;
     int f_no = 0;
-    
-    log = fopen("./log.txt", "wb");
+    char f_name[1000] = {};
+    sprintf(f_name, "./log%d.txt", f_no);
+    while(access(f_name, F_OK) == 0)
+    {
+        sprintf(f_name, "./log%d.txt", ++f_no);
+    }
+    log = fopen(f_name, "wb");
     
     timeout.tv_sec = 5*60;
     timeout.tv_usec = 1;
