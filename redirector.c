@@ -48,7 +48,7 @@ int main(void)
         {
             case -1:
             {
-                printf("error\n");
+                //printf("error\n");
                 break;
             }
             case 0:
