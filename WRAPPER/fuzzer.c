@@ -54,7 +54,6 @@ int main(int argc,char *argv[])
     
     while(exit != -1)
     {
-        
         FD_ZERO(&readfd);                       /* 清空文件描述符集合 */
         FD_SET(0, &readfd);                 /* 添加文件描述符集合 */
         FD_SET(pipe_out[READ], &readfd);      /* 添加文件描述符集合 */
