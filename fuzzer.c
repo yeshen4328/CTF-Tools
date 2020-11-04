@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "char.h"
 #include <pthread.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -13,24 +12,14 @@
 #include <string.h>
 #define READ 0 
 #define WRITE 1
-FILE *log;
 void handle(int sig)
 {
-    fclose(log);
     exit(0);
 }
 
-int main(void)
+int main(int argc,char *argv[])
 {
-    int size = sizeof(arr);
-    //释放目标程序
-    FILE* file = fopen("./freenote2", "wb+");
-    system("chmod 777 ./freenote2");
-    fwrite(arr, size, 1, file);
-    fclose(file);
-    
-
-
+ 
     //开始io劫持
     int pipe_in[2];
     int pipe_out[2];
@@ -56,14 +45,6 @@ int main(void)
     // printf("%s",out_buf);
     // memset(out_buf, 0, 1000);
     int ret = 0;
-    int f_no = 0;
-    char f_name[1000] = {};
-    sprintf(f_name, "./log%d.txt", f_no);
-    while(access(f_name, F_OK) == 0)
-    {
-        sprintf(f_name, "./a_log%d.txt", f_no++);
-    }
-    log = fopen(f_name, "wb");
     
     timeout.tv_sec = 5*60;
     timeout.tv_usec = 1;
@@ -97,8 +78,7 @@ int main(void)
                 if(FD_ISSET(pipe_out[READ], &readfd)>0)
                 {
                     ret = read(pipe_out[READ], out_buf, 1000-1);//read from pipe/sub process
-                    fwrite(out_buf, 1, ret, log);
-                    fflush(log);
+   
                     if(ret > 0)      
                         write(1, out_buf, ret);
                 }
@@ -109,22 +89,13 @@ int main(void)
                     
                     if(ret > 0)
                     {
-                        //write(log, buff2, ret);
-                        char tmp[10] = "##input##";
-                        fwrite(tmp, 1, 9, log);
-                        fwrite(buff2, 1, ret, log);
-                        fflush(log);
                         write(pipe_in[WRITE], buff2, ret);
                     }
                 }
             }
         }
-      
-       
         memset(buff2, 0, 1000);
         memset(out_buf, 0, 1000);
     }
-    
-    fclose(log);
     return 0;
 }
