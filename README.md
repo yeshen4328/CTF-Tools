@@ -26,3 +26,7 @@
 + [ ] nomalPatch（高优先）
 
   普通patch，快速替换free、printf等函数
+  
++ [ ] 种马（给自己）
+  
+  提升权限到shell
