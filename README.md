@@ -8,6 +8,7 @@
 + [X] aflfuzzer
 
   用afl快速找pwn的漏洞(不太靠谱。。)
+  honggfuzz有点效果，可以写成简单的fuzz工具
   
 + [ ] soinjector（高优先）
 
