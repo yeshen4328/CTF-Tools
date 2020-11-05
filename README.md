@@ -1,6 +1,8 @@
 # CTF-Tools
 # 任务列表
-+ [X] wrapper
++ [x] wrapper
 + [ ] soinjector
-+ [ ] afl fuzzer
-+ [ ] elf patch
++ [x] aflfuzzer
++ [ ] elfpatch
++ [ ] turnOnProtection
++ [ ] nomalPatch
