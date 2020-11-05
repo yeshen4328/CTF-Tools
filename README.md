@@ -5,9 +5,9 @@
   给pwn加层壳，流量劫持
   + [ ] prctl 限制子进程系统调用
   
-+ [ ] aflfuzzer
++ [X] aflfuzzer
 
-  用afl快速找pwn的漏洞
+  用afl快速找pwn的漏洞(不太靠谱。。)
   
 + [ ] soinjector（高优先）
 
