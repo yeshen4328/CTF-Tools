@@ -1,6 +1,6 @@
 # CTF-Tools
 # 任务列表
-+ [ ] wrapper
++ [X] wrapper
 + [ ] soinjector
 + [ ] afl fuzzer
 + [ ] elf patch
