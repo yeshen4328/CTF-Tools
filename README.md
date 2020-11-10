@@ -8,7 +8,7 @@
 + [X] aflfuzzer
 
   用afl快速找pwn的漏洞(不太靠谱。。)
-  honggfuzz有点效果，可以写成简单的fuzz工具
+  honggfuzz有点效果，可以写成简单的fuzz工具，利用策略，用honggfuzz的黑盒fuzz对进行fuzz，主要审计伪代码；
   
 + [ ] soinjector（高优先）
 
