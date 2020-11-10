@@ -51,7 +51,7 @@ int main(int argc, char const *argv[])
     {
         dup2(pipe_out[WRITE], 1);//redirect stdout to pipe_out
         dup2(pipe_in[READ], 0);//redirect stdin to pipe_in
-        system("./level0");
+        system("./pwn_demo");
     }
 
     /* Select */  
